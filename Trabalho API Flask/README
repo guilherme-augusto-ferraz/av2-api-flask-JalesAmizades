@@ -1,0 +1,76 @@
+--DESCRIÇÃO DO SISTEMA--
+É uma API REST em Python com uso do Flask, feita para usuários que tenham problemas em se lembrar de suas diversas senhas,
+ao utilizar meu sistema os usuários passarão a se preocupar com apenas uma senha para realizar o login no banco de dados onde estarão
+as suas outras senhas salvas e seus respectivos aplicativos.
+
+--INSTRUÇÕES DE INSTALAÇÃO E EXECUÇÃO--
+
+1.  Escreva o seguinte código em seu terminal para instalar os requisitos da aplicação:
+        pip install -r requirements.txt
+
+2.  Inicialize a API utilizando o seguinte comando:
+        python app.py
+    Caso o comando não mostre resultado use no powershell: 
+        $env:FLASK_APP="app.py"
+        flask run
+    Caso esteja no Linux ou MacOS use:
+        export FLASK_APP="app.py"
+        flask run
+3.  Você deverá receber a seguinte mensagem:
+        * Running on <o seu endereço local>
+    Isso indica que a API está rodando corretamente.
+4.  Utilize um software como Postman ou Insomnia para fazer requisições HTTP à API.
+
+--EXEMPLO DE ROTAS--
+
+    - Rota de cadastro de usuário:
+        Método: POST
+        URL: http://<seu-endereço-local>/api/users/register
+    - Corpo da requisição (JSON):
+        {
+            "username": "<seu_nome_de_usuario>",
+            "password": "<sua_senha>"
+        }
+
+    - Rota de login de usuário:
+        Método: POST
+        URL: http://<seu-endereço-local>/api/users/login
+    - Corpo da requisição (JSON):
+        {
+            "username": "<seu_nome_de_usuario>",
+            "password": "<sua_senha>"
+        }
+
+    - Rota para adicionar um registro:
+        Método: POST
+        URL: http://<seu-endereço-local>/api/registros/create
+    - Corpo da requisição (JSON):
+        {
+            "local": "<nome_do_serviço>",
+            "senha": "<senha_do_serviço>"
+        }
+
+    - Rota para obter todos os registros do usuário autenticado:
+        Método: GET
+        URL: http://<seu-endereço-local>/api/registros 
+
+    - Rota para atualizar um registro específico:
+        Método: PUT
+        URL: http://<seu-endereço-local>/api/registros/<id_do_registro> 
+    - Corpo da requisição (JSON):
+        {
+            "local": "<novo_nome_do_serviço>",
+            "senha": "<nova_senha_do_serviço>"
+            "observacao": "<nova_observacao>"
+        }
+
+    - Rota para deletar um registro específico:
+        Método: DELETE
+        URL: http://<seu-endereço-local>/api/registros/<id_do_registro> 
+
+--OBSERVAÇÕES FINAIS--
+    Deixei algumas comentarios no código para facilitar o entendimento.
+    
+    Comentario adicional: ESSE TRABALHO DEU MUITO TRABALHO
+
+
