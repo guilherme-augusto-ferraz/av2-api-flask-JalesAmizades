@@ -1,0 +1,1 @@
+#descobri que é uma boa pratica ter um __init__.py nas pastas
